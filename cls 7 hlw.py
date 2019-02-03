@@ -1,0 +1,31 @@
+from tkinter import  *
+
+
+root=Tk()
+root.title("CALCULATOR")
+root.geometry("400x700")
+root.resizable(0,0)
+
+title=Label(root,text="CALCULATOR")
+title.config(font=("",35))
+title.place(relx=0.07,rely=0.15)
+Label(root,text='Enter the first number').place(relx=0.05,rely=0.35)
+Label(root,text='Enter the second number').place(relx=0.07,rely=0.38)
+val1=StringVar()
+val2=StringVar()
+ent1=Entry(root,textvariable=val1)
+ent1.place(relx=0.40,rely=0.35)
+ent2=Entry(root,textvariable=val2)
+ent2.place(relx=0.45,rely=0.40)
+button=Button(root,text="+",command=lambda: res.config(text="Output"+str(int(val1.get())+int(val2.get()))))
+button.place(relx=0.07,rely=0.45)
+button=Button(root,text="-",command=lambda: res.config(text="output"+str(int(val1.get())-int(val2.get()))))
+button.place(relx=0.15,rely=0.45)
+button=Button(root,text="*",command=lambda: res.config(text="Output"+str(int(val1.get())*int(val2.get()))))
+button.place(relx=0.22,rely=0.45)
+button=Button(root,text="/",command=lambda: res.config(text="Output"+str(int(val1.get())/int(val2.get()))))
+button.place(relx=0.29,rely=0.45)
+res=Label(root,text='OUTPUT')
+res.place(relx=0.05,rely=0.50)
+
+root.mainloop()
